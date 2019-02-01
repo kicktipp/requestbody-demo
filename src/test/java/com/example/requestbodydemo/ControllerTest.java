@@ -50,7 +50,6 @@ public class ControllerTest {
     @Test
     public void testBindingResult() {
         FakeForm form = new FakeForm();
-        form.setPositiveInteger("Hello?");
         webTestClient
                 .post()
                 .uri("/form")
@@ -61,5 +60,4 @@ public class ControllerTest {
                 .expectBody()
                 .jsonPath("$.anzahlFehler").isEqualTo("1");
     }
-
 }
